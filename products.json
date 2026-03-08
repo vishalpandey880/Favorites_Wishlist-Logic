@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Cashmere Blend Overcoat",
+        "price": 1250,
+        "category": "Coats",
+        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRmjAoIEarGd-co3EZYU8VWJTMxZ1-GmFrSul10iBTqK5rYYaJ7Bdqq6zHRMinGwvahWfIwFSPnMH2BkVMfMKAE4eoCwWNvB_51lCZL1oXkPo8zsUyVC4rYGlQ"
+    },
+    {
+        "id": 2,
+        "name": "Silk Charmeuse Blouse",
+        "price": 450,
+        "category": "Tops",
+        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRSt-UFdrlr7A_Vkyd8bBdVypXvaJQn9lpQlRUeezrAsJX_W-scM20KzS9QdeCBOJbf8-g0Xcc2vxkgqESZpF23_xPOTRAhOjz9VWrmr9_ffO-XW495Pszu"
+    },
+    {
+        "id": 3,
+        "name": "Structured Wool Blazer",
+        "price": 895,
+        "category": "Jackets",
+        "image": "https://m.media-amazon.com/images/I/4194nWsXsoL._AC_UL640_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Pleated Wide-Leg Trousers",
+        "price": 520,
+        "category": "Bottoms",
+        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQUCBldTFIA4jLrGihqNekjEcbHf_h5lJ8E7mIjP4hNR0xdFc2GTlS53lR1qEBrXMXgbmXj2CKFLZzmw-qnvMebZ7WBdbm1y85jBpBTSNpehVVbs_oicd9XLA"
+    },
+    {
+        "id": 5,
+        "name": "Merino Wool Turtleneck",
+        "price": 295,
+        "category": "Knitwear",
+        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS1JoH91uiBBTNTzT-Uv0thnzgtVJci2F8XWztSKZHnPCuCIeWZ55Sd6TC5huZxvpMLypk3_zsgTlkUaZ5AsYGI4Dc-bKerwsCZCwEUysI9YaAkWudZxDt4"
+    }
+]
