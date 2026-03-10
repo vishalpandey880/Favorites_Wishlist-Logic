@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartCount = document.getElementById('cart-count');
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalElement = document.getElementById('cart-total');
-    
+
     const wishlistCount = document.getElementById('wishlist-count');
     const wishlistItemsContainer = document.getElementById('wishlist-items');
 
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-    window.renderProducts = (productData) => { 
+    window.renderProducts = (productData) => {
         productGrid.innerHTML = productData.map(product => {
             const inWishlist = wishlist.some(item => item.id === product.id);
             return `
@@ -90,7 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addToCart = (id) => {
         const product = products.find(p => p.id === id);
         if (product) {
-            cart.push(product);
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity = (existingItem.quantity || 1) + 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
             saveCart();
             updateCartUI();
             openCart();
@@ -104,33 +109,50 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartUI();
     };
 
-  
+    window.updateQuantity = (index, delta) => {
+        if (cart[index]) {
+            cart[index].quantity = (cart[index].quantity || 1) + delta;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            saveCart();
+            updateCartUI();
+        }
+    };
+
+
     function updateCartUI() {
 
-        cartCount.textContent = cart.length;
+        const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        cartCount.textContent = totalItems;
 
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = '<p class="empty-cart-msg">Your cart is empty.</p>';
         } else {
-            cartItemsContainer.innerHTML = cart.map((item, index) => `
+            cartItemsContainer.innerHTML = cart.map((item, index) => {
+                const qty = item.quantity || 1;
+                return `
                 <div class="cart-item">
                     <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                     <div class="cart-item-details">
                         <h4 class="cart-item-title">${item.name}</h4>
                         <span class="cart-item-price">$${item.price}</span>
-                        <br>
-                        <span class="cart-item-remove" onclick="removeFromCart(${index})">Remove</span>
+                        <div class="cart-item-quantity">
+                            <button class="qty-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                            <span class="qty-count">${qty}</span>
+                            <button class="qty-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                        </div>
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
-     
-        const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+        const total = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
         cartTotalElement.textContent = `$${total.toFixed(2)}`;
     }
 
-  
+
     function saveCart() {
         localStorage.setItem('riora_cart', JSON.stringify(cart));
     }
@@ -147,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     window.toggleWishlistItem = (id, event) => {
-        event.stopPropagation(); 
+        event.stopPropagation();
         const product = products.find(p => p.id === id);
         if (!product) return;
 
@@ -157,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             wishlist.push(product);
         }
-        
+
         saveWishlist();
         updateWishlistUI();
         const currentCategory = document.querySelector('.filter-btn.active').textContent;
@@ -168,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
         wishlist.splice(index, 1);
         saveWishlist();
         updateWishlistUI();
-        e
         const currentCategory = document.querySelector('.filter-btn.active').textContent;
         filterProducts(currentCategory);
     };
@@ -213,4 +234,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCartUI();
     updateWishlistUI();
+
+    // Checkout Logic
+    const checkoutBtn = document.getElementById('start-checkout-btn');
+    const checkoutOverlay = document.getElementById('checkout-overlay');
+    const checkoutClose = document.getElementById('checkout-close');
+    const checkoutForm = document.getElementById('checkout-form');
+    const paymentSuccess = document.getElementById('payment-success');
+    const continueShoppingBtn = document.getElementById('continue-shopping');
+    const checkoutModalTotal = document.getElementById('checkout-modal-total');
+    const submitPaymentBtn = document.getElementById('submit-payment-btn');
+
+    checkoutBtn.addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('Your cart is empty.');
+            return;
+        }
+
+        const total = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
+        checkoutModalTotal.textContent = `$${total.toFixed(2)}`;
+
+        checkoutForm.style.display = 'block';
+        paymentSuccess.style.display = 'none';
+        checkoutForm.reset();
+        submitPaymentBtn.innerHTML = `Pay $${total.toFixed(2)}`;
+        submitPaymentBtn.disabled = false;
+
+        toggleCart();
+        checkoutOverlay.classList.add('open');
+    });
+
+    checkoutClose.addEventListener('click', () => {
+        checkoutOverlay.classList.remove('open');
+    });
+
+    checkoutForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        submitPaymentBtn.textContent = 'Processing...';
+        submitPaymentBtn.disabled = true;
+
+        // Simulate payment processing delay
+        setTimeout(() => {
+            checkoutForm.style.display = 'none';
+            paymentSuccess.style.display = 'block';
+
+            // Clear cart after successful payment
+            cart = [];
+            saveCart();
+            updateCartUI();
+        }, 1500);
+    });
+
+    continueShoppingBtn.addEventListener('click', () => {
+        checkoutOverlay.classList.remove('open');
+    });
 });

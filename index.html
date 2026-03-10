@@ -14,7 +14,7 @@
 </head>
 
 <body>
-      <div class="navbar-wrapper">
+    <div class="navbar-wrapper">
         <nav class="navbar">
             <div class="nav-links">
                 <a href="#home">Home</a>
@@ -58,7 +58,7 @@
         </div>
     </header>
 
-  
+
     <section id="products" class="products-section reveal">
         <h2>Collection</h2>
         <div class="filters">
@@ -86,7 +86,29 @@
                 <span>Total</span>
                 <span id="cart-total">$0.00</span>
             </div>
-            <button class="checkout-btn">Checkout</button>
+            <button class="checkout-btn" id="start-checkout-btn">PROCEED TO CHECKOUT</button>
+            <div class="payment-icons">
+                <svg viewBox="0 0 40 24" class="payment-icon">
+                    <rect width="40" height="24" rx="2" fill="none" stroke="#e0e0e0" stroke-width="1" /><text x="20"
+                        y="16" font-family="sans-serif" font-size="9" font-weight="bold" fill="#999"
+                        text-anchor="middle">VISA</text>
+                </svg>
+                <svg viewBox="0 0 40 24" class="payment-icon">
+                    <rect width="40" height="24" rx="2" fill="none" stroke="#e0e0e0" stroke-width="1" />
+                    <circle cx="16" cy="12" r="5" fill="#e0e0e0" />
+                    <circle cx="24" cy="12" r="5" fill="#999" />
+                </svg>
+                <svg viewBox="0 0 40 24" class="payment-icon">
+                    <rect width="40" height="24" rx="2" fill="none" stroke="#e0e0e0" stroke-width="1" /><text x="20"
+                        y="16" font-family="sans-serif" font-size="9" font-weight="bold" fill="#999"
+                        text-anchor="middle">Pay</text>
+                </svg>
+                <svg viewBox="0 0 40 24" class="payment-icon">
+                    <rect width="40" height="24" rx="2" fill="none" stroke="#e0e0e0" stroke-width="1" /><text x="20"
+                        y="16" font-family="sans-serif" font-size="8" font-weight="bold" font-style="italic" fill="#999"
+                        text-anchor="middle">PayPal</text>
+                </svg>
+            </div>
         </div>
     </div>
 
@@ -125,6 +147,53 @@
             </form>
         </div>
     </footer>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-overlay" id="checkout-overlay">
+        <div class="checkout-modal">
+            <button class="close-btn checkout-close" id="checkout-close">&times;</button>
+            <h2 class="checkout-title">Complete Your Order</h2>
+            <form id="checkout-form" class="checkout-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="card">Card Number</label>
+                    <input type="text" id="card" required placeholder="0000 0000 0000 0000" pattern="\d{16}"
+                        title="16 digit card number">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry">Expiry</label>
+                        <input type="text" id="expiry" required placeholder="MM/YY">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" required placeholder="123" pattern="\d{3,4}"
+                            title="3 or 4 digit CVV">
+                    </div>
+                </div>
+                <button type="submit" class="submit-payment-btn" id="submit-payment-btn">
+                    Pay <span id="checkout-modal-total">$0.00</span>
+                </button>
+            </form>
+            <div id="payment-success" class="payment-success" style="display: none;">
+                <svg viewBox="0 0 24 24" fill="none" class="success-tick" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h3>Payment Successful</h3>
+                <p>Thank you for your order.</p>
+                <button class="continue-shopping-btn" id="continue-shopping">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
