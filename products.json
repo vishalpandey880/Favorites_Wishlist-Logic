@@ -33,5 +33,26 @@
         "price": 295,
         "category": "Knitwear",
         "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS1JoH91uiBBTNTzT-Uv0thnzgtVJci2F8XWztSKZHnPCuCIeWZ55Sd6TC5huZxvpMLypk3_zsgTlkUaZ5AsYGI4Dc-bKerwsCZCwEUysI9YaAkWudZxDt4"
+    },
+    {
+        "id": 6,
+        "name": "Silk Slip Dress",
+        "price": 680,
+        "category": "Dresses",
+        "image": "images/silk_slip_dress.png"
+    },
+    {
+        "id": 7,
+        "name": "Leather Tote Bag",
+        "price": 420,
+        "category": "Accessories",
+        "image": "images/leather_tote_bag.png"
+    },
+    {
+        "id": 8,
+        "name": "Cashmere Mock Neck",
+        "price": 310,
+        "category": "Knitwear",
+        "image": "images/cashmere_mock_neck.png"
     }
 ]
