@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-category">${product.category}</p>
                     </div>
-                    <span class="product-price">$${product.price}</span>
+                    <span class="product-price">₹${product.price}</span>
                 </div>
                 <button class="add-to-cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
             </div>
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                     <div class="cart-item-details">
                         <h4 class="cart-item-title">${item.name}</h4>
-                        <span class="cart-item-price">$${item.price}</span>
+                        <span class="cart-item-price">₹${item.price}</span>
                         <div class="cart-item-quantity">
                             <button class="qty-btn" onclick="updateQuantity(${index}, -1)">-</button>
                             <span class="qty-count">${qty}</span>
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         const total = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
-        cartTotalElement.textContent = `$${total.toFixed(2)}`;
+        cartTotalElement.textContent = `₹${total.toFixed(2)}`;
     }
 
 
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                     <div class="cart-item-details">
                         <h4 class="cart-item-title">${item.name}</h4>
-                        <span class="cart-item-price">$${item.price}</span>
+                        <span class="cart-item-price">₹${item.price}</span>
                         <div style="display: flex; gap: 1rem; margin-top: 0.5rem; align-items: center;">
                             <button class="move-to-cart-btn" onclick="moveToCart(${index})">Move to Cart</button>
                             <span class="cart-item-remove" onclick="removeFromWishlist(${index})" style="margin-top: 0;">Remove</span>
@@ -251,12 +251,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const total = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
-        checkoutModalTotal.textContent = `$${total.toFixed(2)}`;
+        checkoutModalTotal.textContent = `₹${total.toFixed(2)}`;
 
         checkoutForm.style.display = 'block';
         paymentSuccess.style.display = 'none';
         checkoutForm.reset();
-        submitPaymentBtn.innerHTML = `Pay $${total.toFixed(2)}`;
+        submitPaymentBtn.innerHTML = `Pay ₹${total.toFixed(2)}`;
         submitPaymentBtn.disabled = false;
 
         toggleCart();
