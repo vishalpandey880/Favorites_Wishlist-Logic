@@ -54,5 +54,19 @@
         "price": 730,
         "category": "Knitwear",
         "image": "images/cashmere_mock_neck.png"
+    },
+    {
+        "id": 9,
+        "name": "hoodie",
+        "price": 750,
+        "category": "Jackets",
+        "image": "images/hood.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Track pants",
+        "price": 750,
+        "category": "Bottoms",
+        "image": "images/track.jpg"
     }
 ]
