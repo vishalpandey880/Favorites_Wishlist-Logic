@@ -11,27 +11,27 @@
         "name": "Oversized baggy track pant",
         "price": 1589,
         "category": "Bottoms",
-        "image": "/Users/vishalpandey/Desktop/Riora-main/images/image.png"
+        "image": "images/image.png"
     },
     {
         "id": 3,
         "name": "Oversized baggy track pant",
         "price": 1589,
         "category": "Bottoms",
-        "image": "/Users/vishalpandey/Desktop/Riora-main/images/image1.png"
+        "image": "images/image3.png"
     },
     {
         "id": 4,
         "name": "Oversized baggy track pant",
         "price": 1589,
         "category": "Bottoms",
-        "image": "/Users/vishalpandey/Desktop/Riora-main/images/image2.png"
+        "image": "images/image2.png"
     },
     {
         "id": 5,
         "name": "Oversized baggy track pant",
         "price": 1589,
         "category": "Bottoms",
-        "image": "/Users/vishalpandey/Desktop/Riora-main/images/image3.png"
+        "image": "images/image1.png"
     }
 ]
