@@ -104,7 +104,7 @@ ul {
 
 .logo {
     font-family: var(--font-serif);
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: 0.15rem;
     text-transform: uppercase;
@@ -646,7 +646,7 @@ footer {
     }
 
     .logo {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 }
 
@@ -667,7 +667,7 @@ footer {
     }
 
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         text-align: left;
     }
 
