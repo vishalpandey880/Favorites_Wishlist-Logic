@@ -99,7 +99,7 @@ This project can be deployed on any static hosting platform:
 
 ### 🔗 Live Demo
 
-> **Live Demo:** [Add your deployed link here](#)
+> **Live Demo:** [https://riora.vercel.app/](#)
 
 ---
 
