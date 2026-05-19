@@ -1,37 +1,37 @@
 [
-     {
+    {
         "id": 1,
         "name": "Oversized tank top and baggy track pants set",
         "price": 3750,
-        "category": "Bottoms",
+        "category": "Men",
         "image": "images/mypic.png"
     },
     {
         "id": 2,
         "name": "Oversized baggy track pant",
         "price": 1589,
-        "category": "Bottoms",
+        "category": "Men",
         "image": "images/image.png"
     },
     {
         "id": 3,
         "name": "Oversized baggy track pant",
         "price": 1589,
-        "category": "Bottoms",
+        "category": "Men",
         "image": "images/image3.png"
     },
     {
         "id": 4,
         "name": "Oversized baggy track pant",
         "price": 1589,
-        "category": "Bottoms",
+        "category": "Men",
         "image": "images/image2.png"
     },
     {
         "id": 5,
         "name": "Oversized baggy track pant",
         "price": 1589,
-        "category": "Bottoms",
+        "category": "Men",
         "image": "images/image1.png"
     }
 ]
