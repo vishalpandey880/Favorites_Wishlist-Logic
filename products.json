@@ -36,49 +36,49 @@
     },
     {
         "id": 6,
-        "name": "cort_set",
-        "price": 1999,
+        "name": "cord_set",
+        "price": 2499,
         "category": "Women",
         "image": "images/cort1.jpeg"
     },
     {
         "id": 7,
-        "name": "cort_set",
-        "price": 1999,
+        "name": "cord_set",
+        "price": 2499,
         "category": "Women",
         "image": "images/cort2.jpeg"
     },
     {
         "id": 8,
-        "name": "cort_set",
-        "price": 1999,
+        "name": "cord_set",
+        "price": 2499,
         "category": "Women",
         "image": "images/cort3.jpeg"
     },
     {
         "id": 9,
-        "name": "cort_set",
-        "price": 1999,
+        "name": "cord_set",
+        "price": 2499,
         "category": "Women",
         "image": "images/cort4.jpeg"
     },
     {
         "id": 10,
-        "name": "cort_set",
-        "price": 1999,
+        "name": "cord_set",
+        "price": 2499,
         "category": "Women",
         "image": "images/cort5.jpeg"
     },
     {
         "id": 11,
-        "name": "cort",
+        "name": "cord",
         "price": 1999,
         "category": "Women",
         "image": "images/cort66.jpeg"
     },
     {
         "id": 12,
-        "name": "cort",
+        "name": "cord",
         "price": 1999,
         "category": "Women",
         "image": "images/cort.jpeg"
